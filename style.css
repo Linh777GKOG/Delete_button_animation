@@ -26,6 +26,7 @@ a {
   align-items: center;
   transition: 0.5s;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 a span {
@@ -37,8 +38,12 @@ a span {
   background: #fff;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
+  transition: 0.5s;
 }
 
+a:hover span {
+  transform: scale(1.5) rotate(60deg) translateY(10px);
+}
 a span::before {
   content: "";
   position: absolute;
@@ -48,5 +53,16 @@ a span::before {
   background: #fff;
   box-shadow: 12px -2px 0 #333, 12px -3px 0 #333, 15px -1px 0 #333,
     6px -2px 0 #fff;
+  transition: 0.5s;
+}
+
+a:hover span::before {
+  transform: rotate(-90deg) translateX(50%) translateY(-10px);
+}
+
+a text {
+  position: absolute;
+  right: 40px;
+  color: #fff;
   transition: 0.5s;
 }
