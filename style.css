@@ -30,6 +30,9 @@ a {
   text-decoration: none;
 }
 
+a.active {
+  background: #2196f3;
+}
 a span {
   position: absolute;
   left: 40px;
@@ -41,9 +44,19 @@ a span {
   border-bottom-right-radius: 3px;
   transition: 0.5s;
 }
-
 a:hover span {
   transform: scale(1.5) rotate(60deg) translateY(10px);
+}
+
+a.active span {
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  border-radius: 0;
+  width: 20px;
+  height: 10px;
+  background: transparent;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
 }
 a span::before {
   content: "";
@@ -57,10 +70,11 @@ a span::before {
   transition: 0.5s;
 }
 
-a:hover span::before,
+a.active:hover span::before,
 a.active span::before {
   transform: scale(0);
 }
+
 a:hover span::before {
   transform: rotate(-90deg) translateX(50%) translateY(-10px);
 }
