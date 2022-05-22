@@ -27,6 +27,7 @@ a {
   transition: 0.5s;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  text-decoration: none;
 }
 
 a span {
@@ -56,6 +57,10 @@ a span::before {
   transition: 0.5s;
 }
 
+a:hover span::before,
+a.active span::before {
+  transform: scale(0);
+}
 a:hover span::before {
   transform: rotate(-90deg) translateX(50%) translateY(-10px);
 }
@@ -65,4 +70,9 @@ a text {
   right: 40px;
   color: #fff;
   transition: 0.5s;
+}
+
+a:hover text,
+a.active text {
+  transform: translateX(-50px) translateY(-5px) scale(0);
 }
